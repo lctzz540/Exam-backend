@@ -3,8 +3,9 @@ import json
 import docx
 import re
 from models import case_class, question_class, answer_class
+import random
 
-async def processFileUpload(files):
+async def processFileUpload(files, n):
     global doc, fullText
     for file in files:
         if file.content_type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
@@ -76,4 +77,4 @@ async def processFileUpload(files):
         except:
             pass
 
-        return json.dumps(fullText, ensure_ascii=False) 
+        return json.dumps(random.suffle(fullText)[0:n], ensure_ascii=False) 
