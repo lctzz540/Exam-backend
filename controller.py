@@ -5,7 +5,7 @@ import re
 from models import case_class, question_class, answer_class
 import random
 
-async def processFileUpload(files, n):
+async def processFileUpload(files):
     global doc, fullText
     for file in files:
         if file.content_type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
@@ -77,4 +77,4 @@ async def processFileUpload(files, n):
         except:
             pass
 
-        return json.dumps(random.sample(fullText, n), ensure_ascii=False) 
+        return json.dumps(random.sample(fullText,len(fullText)), ensure_ascii=False) 
