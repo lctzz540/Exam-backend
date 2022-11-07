@@ -77,4 +77,4 @@ async def processFileUpload(files, n):
         except:
             pass
 
-        return json.dumps(random.suffle(fullText)[0:n], ensure_ascii=False) 
+        return json.dumps(random.sample(fullText, n), ensure_ascii=False) 

@@ -22,6 +22,6 @@ def hello():
 
 @app.post("/upload-file")
 async def create_upload_file(files: list[UploadFile], n: int):
-   return await processFileUpload(files)
+   return await processFileUpload(files, n)
 if __name__ == '__main__':
     uvicorn.run(app, host='127.0.0.1', port=8000)
