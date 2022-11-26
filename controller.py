@@ -52,13 +52,13 @@ async def processFileUpload(files):
                             if para.text != "" and para.text != " " and case_ques_in == False:
                                 fullText[-1].answerOptions.append(answer_class(para.text, False).__dict__)
                                 for run in para.runs:
-                                    if run.bold:
+                                    if run.underline:
                                         fullText[-1].answerOptions[-1]['isCorrect'] = True
                                         break
                             if para.text != "" and para.text != " " and case_ques_in == True:
                                 case_list_out[-1].ques[-1].answerOptions.append(answer_class(para.text, False).__dict__)
                                 for run in para.runs:
-                                    if run.bold:
+                                    if run.underline:
                                         case_list_out[-1].ques[-1].answerOptions[-1]['isCorrect'] = True
                                         break
                         except:
